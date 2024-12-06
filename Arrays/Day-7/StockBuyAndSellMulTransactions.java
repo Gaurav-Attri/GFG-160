@@ -33,3 +33,23 @@ class Solution {
         return maxProfit;
     }
 }
+
+/**
+ * MORE READABLE
+ * TC - O(n)
+ * SC - O(1)
+ */
+class Solution {
+    public int maximumProfit(int prices[]) {
+        int n = prices.length;
+        if(n == 1) return 0;
+        
+        int maxProfit = 0;
+        
+        for(int i = 0; i < n-1; i++){
+            if(prices[i] < prices[i+1]) maxProfit += (prices[i+1]-prices[i]);
+        }
+        
+        return maxProfit;
+    }
+}
